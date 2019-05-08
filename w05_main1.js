@@ -21,4 +21,14 @@ function main()
     var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
     var cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
+
+    loop();
+
+    function loop()
+    {
+        requestAnimationFrame( loop );
+        cube.rotation.x += 0.001;
+        cube.rotation.y += 0.001;
+        renderer.render( scene, camera );
+    }
 }
